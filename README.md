@@ -11,3 +11,6 @@ And returns...
 - a string with 
   - the first letter of all non-minor words capitalized
   - the first letter of the sentence capitalized
+
+### Notes:
+- ignore the case of the minor words string
