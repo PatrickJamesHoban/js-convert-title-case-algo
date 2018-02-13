@@ -13,9 +13,11 @@
 
 
 // CODE
-// Refactor
+
+// REFACTOR #1
 function titleCase(title, minorWords) {
   var book = title.toLowerCase().replace(/\w\S*/g, function(word) { return word.charAt(0).toUpperCase() + word.substr(1)});
+
   var lilWords = [];
   if ( minorWords !== undefined ) {
     lilWords = minorWords.toLowerCase().split(" "); 
@@ -25,11 +27,20 @@ function titleCase(title, minorWords) {
     let capWord = " " + word.charAt(0).toUpperCase() + word.slice(1); 
     book = book.replace(capWord, " " + word);
   });
-  
+
   return book; 
 }
 
-// Original First Pass 
+
+// DRIVER CODE
+
+titleCase('a clash of KINGS', 'a an the of'); // 'A Clash of Kings')
+titleCase('THE WIND IN THE WILLOWS', 'The In'); // 'The Wind in the Willows')
+titleCase('the quick brown fox'); // 'The Quick Brown Fox'
+
+
+// ORIGINAL FIRST PASS 
+
 // function titleCase(title, minorWords) {
 //   var book = title.toLowerCase();
 //   // console.log(book)
@@ -60,8 +71,3 @@ function titleCase(title, minorWords) {
 // }
 
 
-
-// DRIVER CODE
-// titleCase('a clash of KINGS', 'a an the of'); // 'A Clash of Kings')
-// titleCase('THE WIND IN THE WILLOWS', 'The In'); // 'The Wind in the Willows')
-titleCase('the quick brown fox'); // 'The Quick Brown Fox'
